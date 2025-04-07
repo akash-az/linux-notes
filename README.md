@@ -118,7 +118,7 @@ Linux :
 in linux -> / (forward slash, is the top level root directory) > /root,/home,/boot,/etc,/usr,/bin
 
 / - The main (root) directory of Linux  
-/bin - Basic commands like copy (cp), move (mv), and list (ls) ,Essential binaries (commands taht can be used by all users)
+/bin - Basic commands like  (cp), move (mv), and list (ls) ,Essential binaries (commands taht can be used by all users)
 /sbin - Special commands for system management ,(System binaries (admin commands only used by admins))
 /boot - Files needed to start (boot) the system ,(kernel, bootloader)
 /dev - Special files for hardware like hard drives and USBs  
@@ -137,4 +137,171 @@ in linux -> / (forward slash, is the top level root directory) > /root,/home,/bo
 /usr - Programs and files for users (e.g., applications),(User applications and utilities ) are by default installed here.
 /var - Frequently changing data like logs and emails ,(Variable data (logs, cache, mail))
 
-Boot process -> After a pc is switched on > all inactive files,packages are activated also POST (Power on self test is done like battery is charged or not)
+Boot process -> After a pc is switched on > all inactive files,packages are activated also POST (Power on self test is done like battery is charged or not
+
+### Commands 
+
+🔹 1. nano – Command-Line Text or (Beginner-Friendly)
+
+📌 Basic Syntax: nano filename
+
+
+✅ Scenarios & Examples:
+
+🔸 Scenario 1: Create a new file
+
+nano notes.txt
+You enter nano’s or.
+
+Type: This is my first note.
+
+Save: Press Ctrl + O, then Enter.
+
+Exit: Press Ctrl + X.
+
+🔸 Scenario 2:  existing file
+
+nano /etc/hostname
+Use arrow keys to navigate.
+
+ the hostname.
+
+Save and exit as above.
+
+
+🔸 Useful Shortcuts:
+Ctrl + O: Write out (save)
+
+Ctrl + X: Exit
+
+Ctrl + W: Search
+
+Ctrl + K: Cut line
+
+Ctrl + U: Paste
+
+🔹 2. touch – Create Empty File / Modify Timestamp
+
+
+📌 Basic Syntax:
+
+touch filename
+✅ Scenarios & Examples:
+🔸 Scenario 1: Create multiple files
+touch file1.txt file2.txt file3.txt
+
+
+🔸 Scenario 2: Update timestamp (modification time)
+touch existing.txt
+
+
+🔸 Scenario 3: Create files inside folders
+mkdir logs
+touch logs/app.log logs/db.log
+
+
+🔸 Scenario 4: Use -t to set a custom timestamp
+touch -t 202401011200 file.txt
+(This sets the file's date to Jan 1, 2024, 12:00 PM)
+
+
+🔹 3. cat – Display or Create File Content
+
+📌 Basic Syntax:
+
+cat filename
+✅ Scenarios & Examples:
+
+🔸 Scenario 1: View a file
+cat hello.txt
+
+
+🔸 Scenario 2: Create a file with cat
+cat > grocery.txt
+Milk
+Eggs
+Bread
+# Press Ctrl + D to save
+
+
+🔸 Scenario 3: Concatenate multiple files
+cat part1.txt part2.txt > combined.txt
+
+
+🔸 Scenario 4: Append to a file
+cat >> notes.txt
+# Type more lines
+# Press Ctrl + D
+
+
+🔸 Scenario 5: Number lines
+cat -n script.sh
+
+
+
+🔹 4. vi and vim – Powerful Terminal Text ors
+vi is the older version; vim (Vi IMproved) is more powerful and feature-rich.
+
+📌 Basic Syntax:
+
+vi filename
+vim filename
+✅ Modes in vi/vim:
+Normal mode (default): For commands
+
+Insert mode: For typing (i to enter)
+
+Visual mode: For selection
+
+Command mode: For actions like save, exit (:)
+
+✅ Scenarios & Examples:
+
+
+🔸 Scenario 1: Create/ a file
+
+vi example.txt
+Press i → enter insert mode → type: "Hello Vim"
+
+Press Esc → back to normal mode
+
+Type :wq → save and quit
+
+🔸 Scenario 2: Quit without saving
+vim
+
+:q!
+
+🔸 Scenario 3: Save without quitting
+vim
+
+
+:w
+
+🔸 Scenario 4:  and paste lines
+yy → yank () current line
+
+p → paste after current line
+
+🔸 Scenario 5: Delete text
+
+dd → delete current line
+
+d$ → delete to end of line
+
+
+🔸 Scenario 6: Search
+vim
+
+
+/foo
+
+Use n for next match, N for previous
+
+🔸 Scenario 7: Replace
+vim
+
+
+:%s/old/new/g
+
+Replace all "old" with "new" in the file
