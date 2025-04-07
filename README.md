@@ -305,3 +305,14 @@ vim
 :%s/old/new/g
 
 Replace all "old" with "new" in the file
+
+
+## CReate Directories :
+
+## command > mkdir : make directory
+
+ * for creating folder > mkdir directort-name  
+ * for creating folder inside a folder inside a folder >   mkdir dir2/dir3/dir4
+ * * / means root when nothing is behind it > /home/ec2-user : first / is root and 2nd / is separation.
+    
+
