@@ -279,6 +279,7 @@ vim
 :w
 
 🔸 Scenario 4:  and paste lines
+
 yy → yank () current line
 
 p → paste after current line
@@ -291,6 +292,7 @@ d$ → delete to end of line
 
 
 🔸 Scenario 6: Search
+
 vim
 
 
