@@ -312,7 +312,50 @@ Replace all "old" with "new" in the file
 ## command > mkdir : make directory
 
  * for creating folder > mkdir directort-name  
- * for creating folder inside a folder inside a folder >   mkdir dir2/dir3/dir4
+ * for creating folder inside a folder inside a folder >   mkdir dir2/dir3/dir4  : here slashes are called separation.
  * * / means root when nothing is behind it > /home/ec2-user : first / is root and 2nd / is separation.
+  
+ * cd directory-name > cd here is change directory
+ * cd .. > for going to parent directory.
+ * pwd : print working directory
+
+   #Example :
+   pwd : shows > /home/ec2-user/dir1/dir2/dir3
+   to reach to ec2-user > cd../../..
+
+   commands for : how to copy a file.
+                  how to cut and paste file
+                  how to rename a file or directory
+                  how to create hidden file or directory
+                  how to remove file or directory
+
+   # how to create hidden file or directory
+   touch .file-name
+   ls -a : for seeing all file and folder including hidden.
+   mkdir .directory-name
+
+   * use dot before any file or folder name for any coomand
+
+   #  how to copy a file.
+   * cp file1 file2 : here file1 is source and file2 is destination
+
+   #  how to cut and paste file
+   command : mv file1 directory1 > moves file1 to directory1 
+
+   # how to rename a file or directory
+   command > mv file1 myFIle : moves content of file1 to myFile making it look like rename process.
+
+   #  how to remove file or directory
+   * rmdir > used to remove specified empty directory  > rmdir dir-name
+   * rmdir -p > remove both the parent and child directory > rmdir -p dir1/dir2
+   * rmdir -pv > removes all the parent and subDirectory along with the Verbrase.
+  
+   * rm -rp > remove non-empty directories including parent and sub directory. : p here means parent.
+   * rm -rf > removes even non-empty file and directory : f here means forcefully
+   * rm -r > removes empty directory 
+     
+  
+   
+
     
 
