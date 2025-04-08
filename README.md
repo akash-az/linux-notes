@@ -355,7 +355,19 @@ Replace all "old" with "new" in the file
    * rm -rp > remove non-empty directories including parent and sub directory. : p here means parent.
    * rm -rf > removes even non-empty file and directory : f here means forcefully
    * rm -r > removes empty directory 
-     
+
+   ## Useful commands : head filename > shows first 10 lines of content of a file
+                        tail filename > shows last 10 lines of content of a file
+                        less filename > shows all the content that could fit in a page
+                        more filename > shows all thepages one by one.
+
+    * hostname : provide info about your machine like ip adress, network address
+    * hostname -i : for getting just your ip address.
+    * cat /etc/os-release or (cat /etc/os-rel*): provides verison of os currently being used by machine
+    * yum : yellowdog updater modified > for installing and un-installing packages in system.
+         example : yum install httpd (httpd installs the apache server in the computer)
+      
+
   
    
 
