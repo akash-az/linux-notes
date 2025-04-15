@@ -365,7 +365,21 @@ Replace all "old" with "new" in the file
     * hostname -i : for getting just your ip address.
     * cat /etc/os-release or (cat /etc/os-rel*): provides verison of os currently being used by machine
     * yum : yellowdog updater modified > for installing and un-installing packages in system.
-         example : yum install httpd (httpd installs the apache server in the computer)
+         example : yum install httpd (httpd installs the apache server in the computer,responses to the web server)
+    * yum install httpd -y : Automatically yes all the prompts.
+    * yum remove httpd : removes the apache.
+    * yum update httpd : updates the package to the latest version.
+    * Service httpd start : starts the apache server.
+    * Service httpd status : provides the status of the httpd server.
+    * chkconfig httpd on : everytime we turn on pc , apache autmatically turns on.
+    * chkconfgi httpd off : turns of the automation
+    * yum list installed : shows all the installed software list
+    * which software/package-name : shows whether a software is installed or not.
+    * whoami : shows whether i am a root user or a normal user.
+    * echo "helloi": to show the message to someone sharing our screen
+    * echo "message" > filez " : saves this message/text in the file if exists if not , creates a new file and then saves the message.
+    * echo > filez : removes all the text from filez 
+
       
 
   
