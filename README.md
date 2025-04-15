@@ -379,7 +379,8 @@ Replace all "old" with "new" in the file
     * echo "helloi": to show the message to someone sharing our screen
     * echo "message" > filez " : saves this message/text in the file if exists if not , creates a new file and then saves the message.
     * echo > filez : removes all the text from filez 
-
+    * grep root /etc/passwd
+    * sort filename : sorts the files in alphabetical order
       
 
   
