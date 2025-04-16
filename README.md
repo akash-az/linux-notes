@@ -381,10 +381,57 @@ Replace all "old" with "new" in the file
     * echo > filez : removes all the text from filez 
     * grep root /etc/passwd
     * sort filename : sorts the files in alphabetical order
-      
-
   
-   
+    # command related to users and groups
 
-    
+   * useradd user-name : adds a user without admin rights
+      -> cat /etc/passwd : will shows a long list with user-name on the end line
+   * groupadd group-name : adds this group
+   *  -> cat /etc/group : will display the new group also will display new user0name as any new user created without group name is automatically added to the new group.
+  
+   *  gpasswd -a user-name group-name : to add 1 user to a group > but the users must exist
+   *  gpasswd -m user-name1,user-name2,user-name3 group-name  > but all the users must exist     
+     -> cta /etc/group
+   * ln -s  fileName softfileNmae: for creating soft-link(shortcut)  of a file also if main file deleted,shortcut will be deleted too.
+   * ln  fileName hardFileName : for creating backup file of a resource.If original deleted , backup remains. Also any updates to the original resource is reflected in backup too.Example if 10 new file added/removed from resource same will happen in the backup ans 
+     vice-versa.
+    -> cat >> fileName or backupFileName : to update content and ctrl+d to save.then if other file checked changes will be reflected.
+   * tar -cvf(create, verbrose[for seeing whatever done on screen], forcefully)is an archiever used to combine multiple files into one. either for sending or storing
+      -> tar -cvf dirX.tsr dirX  : here output will be dirX.tar and all sub dirctories within dirX (ex: dirX has dirY > has dirZ)
+      -> to check : ls > will display dirX.tar and dirX
+              
+  * gzip dirx.tar : will compress and zip dirx.tar
+     -> ls : output > dirX.tart.gz
+  * gunzip dirX.tar.gz : will uncompress/unzip dirX.tar.gz
+  * tar -xvf dirX.tar : unarchieves the directory dirX.tar
+
+  ** wget <url> : is a non-interactive network downloader , downloades packages/softwares from resource and continuouslly tries again and again when download fails
+
+  ## permissions to a file : -rwx r_xr_ _ 1 root root 0 July 01 04:00 dirX/fileX 
+  file permission representation : -rwx r_xr_ _ 1 root root 0 July 01 04:00 File1 : here if - "file", if d "directory ", if l "link"
+                                 -> rwx : read, write , execute(executable files that dont open but start running/installing) > permissions provided to the current user root or other           (this permission is for owner)
+                                 -> r_x : (for group) i.e permission for other user who are present in the group apart from root user > r is for read permission and x is for executable          (this permission is for group)
+                                 -> r_ _ : only read permission for other users .                                                                                                                 (this permission is for others)
+                                 -> r_x : (for group) i.e permission for other user who are present in the group apart from root user > r is for read permission and x is for executable                             
+                                 -> 1 : represents symbolic link that is how many links are created through which this file/folder can be accessed. A file generally has 1 soft link and a dirctory has 2 hard link. 
+                                 -> first root : file or directories owner
+                                 -> 2nd root : if no group is created then by default group is root
+                                 -> 0 represents file size in bytes > empty file has 0 and empty folder has 6 bytes 
+                              Example for directory : -rwx r_xr_ _ 2 root root 6 July 01 04:00 dirX
+
+   # Changing permission mode :
+     Access modes : r - 4(decimal value) / w -2 /x - 1, so for any permission rwx : value is 7 < for r_x : value is 4+0+1 = 5 > r_ _ : has value 4 + 0 + 0 = 4. 
+     example scenario : change all permission to : d rwx rwx rwx : chmod 777 dir-name
+                                                 -> ls -l : to check permission
+
+     example 2 : change permission to : _ r_x _wx r_ _ : chmod 534 dirX
+     example chmod 700 : represents < rwx ___ ___  (each time 3 values will be given)
+
+    u stans for user, g stands for group , o stands for others
+    ** chmod u=r,g = rwx, o= wx
+    if permission change is required > chmod u-wx,g+w,o=wx file1.  
+
+    ** now if 
+      ->  chown bhupinder file1 : changes from bhupinder to file1
+      -> chgrp devops file1  : changes from froup to devops
 
