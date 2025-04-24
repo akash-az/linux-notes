@@ -147,3 +147,186 @@ in linux -> / (forward slash, is the top level root directory)
 
 
 Boot process -> After a pc is switched on > all inactive files,packages are activated also POST (Power on self test is done like  battery is charged or not)
+
+
+linux and unix designed for different purposes and audience
+
+* constantly updated by large community of developers which means faster updates and bug fixes.
+
+
+proprietery , not open source , need a license to use it.
+updates tends to be slower
+
+unix is more specialized and tailored to more specialized tasks.
+provides stability and 
+
+linux kernel :  process management , file system management,running multiple [rograms at once.
+
+hardware abstraction : software does not need to be avare of the hardware,it 
+ just communictaes with the kernel which makes it efficient
+
+Modularity : can add extra features like : deivce drivers , network protocols , 
+             customizable for personal use and powering servers.
+
+shell and bash :
+
+shell : a command line interface that lets you interactwith the operating system
+bridge between u and kernel, take command , interprets it and communicates to the hardware.
+jobs : scripting,command history , Job control
+
+popular shells in linux : Bash,Zsh,Fish
+
+
+Bash : improved version of Bourne shell (sh)
+
+Better scripting tools,
+command line editing,
+support for arrays and functions
+
+shell is general term for any CLI.
+But bash is specific type of shell with advanced features 
+
+
+Basic components of Linux :
+
+Kernel : memory managemt,Process schesuling,device communication
+
+system libraries : these provide functions that allow applications to directly interact with the kernel.
+
+
+system utility : specialized programs handling 
+
+
+
+TCP/ip/networking/Architecture/specific apllications and services
+
+
+* kernel version of the system u are on  .
+
+uname : prints about system information.
+uname -a : Linux rahul-HP-Laptop-15q-ds0xxx 6.8.0-38-generic #38-Ubuntu SMP PREEMPT_DYNAMIC Fri Jun  7 15:25:01 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+
+uname variations :
+
+uname - v (version)
+uname -r (release)
+
+
+Part | Meaning
+Linux | The kernel name (you're using the Linux kernel).
+rahul-HP-Laptop-15q-ds0xxx | The hostname of your machine (typically shows username-device model).
+6.8.0-38-generic | The kernel version: 6.8.0 is the version, -38-generic is the specific build variant from Ubuntu.
+#38-Ubuntu | The build number and distro: This is the 38th build of this kernel, built for Ubuntu.
+SMP | Symmetric Multi-Processing support, meaning the kernel can handle multiple CPU cores.
+PREEMPT_DYNAMIC | Kernel preemption model: allows dynamic switching between preemptive and non-preemptive modes for better responsiveness.
+Fri Jun  7 15:25:01 UTC 2024 | The date and time the kernel was compiled.
+x86_64 | The machine hardware name: 64-bit architecture.
+x86_64 | The processor type (same as above).
+x86_64 | The hardware platform (again, 64-bit).
+GNU/Linux | The operating system: GNU tools + Linux kernel = GNU/Linux.  
+
+
+current ip address : 
+
+ifconfig (interface configuration)  (old way)
+
+shows loopback device and ethernet device,ipv4 address,ipv6 address,subnet mask :
+
+Linux rahul-HP-Laptop-15q-ds0xxx 6.8.0-38-generic #38-Ubuntu SMP PREEMPT_DYNAMIC Fri Jun  7 15:25:01 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+
+
+** ip addr show : gives me every thing
+* ip addr show eth0
+
+
+? how would you check disk space :
+
+df -ah   (disk free all file systems ,human readable formatting)
+
+? how to manage a service
+
+** service app-name status (oldway)
+** service mysql status
+
+
+** systemctl status mysql
+
+? space used by content of a directory :
+
+* du -sh "Linux Notes" (path)
+   or go in dir > du -sh
+
+// Networking 
+
+? check for open ports , listening network sockets, services that are listenig to TCP/UDP port or sockets
+
+** netstat : gives a long list.
+
+basically hace to filter down : netstat -tulpn (show tcp connections, show udp connections, only listening , show numerical addresses instead of numerical names )
+* netstat -tulpn | grep mysql 
+
+ss – Socket Stat (Modern Replacement for netstat)
+
+ss provides more detailed information about socket connections and is faster than netstat.
+
+Example: Find PID by Port Number
+ss -tuln | grep :8080
+This shows TCP/UDP connections listening on port 8080, and it will include the PID in the output.
+
+? how to check cpu usage of a process
+
+top/htop/ ps aux | grep process-name
+
+ps – Show napshot of Running Processes
+✅ Basic usage:
+
+ps
+
+Shows processes running in the current terminal.
+
+✅ Full system processes:
+
+ps aux
+
+✅ Filter by process name:
+
+ps aux | grep apach
+
+4. kill – Terminate a Process by PID
+✅ Example:
+
+kill 1234
+Stops the process with PID 1234.
+
+🔴 Force kill:
+
+kill -9 1234
+
+🔫 5. pkill – Kill by Process Name
+
+✅ Example:
+
+pkill firefox
+Kills all processes named firefox.
+
+pidof – Get PID of a Process
+
+pidof nginx
+
+
+? dealing with mounts :
+
+ ls /mnt
+
+mount /dev/sda2 /mnt
+
+to check existing mounts : simply mount
+
+? how to look for something :
+
+using man command
+
+man command-name 
+
+* man ps
+
